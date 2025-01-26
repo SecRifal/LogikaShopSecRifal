@@ -1,0 +1,493 @@
+*{
+    user-select: none;
+}
+
+/*Обнуление*/
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+  
+  *, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+  
+  :focus, :active {
+    outline: none;
+}
+  
+  a:focus, a:active {
+    outline: none;
+}
+  
+  nav, footer, header, aside {
+    display: block;
+}
+  
+  html, body {
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 14px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+  }
+  
+  input, button, textarea {
+    font-family: inherit;
+  }
+  
+  input::-ms-clear {
+    display: none;
+  }
+  
+  button {
+    cursor: pointer;
+  }
+  
+  button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+  }
+  
+  a, a:visited {
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: none;
+  }
+  
+  ul li {
+    list-style: none;
+  }
+  
+  img {
+    vertical-align: top;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: inherit;
+  }
+
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+    margin: 0;
+    background-image: url(imgs/бг.jpg);
+    color: white;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    font-family: 'Comfortaa';
+}
+
+header{
+    display: flex;
+    border-bottom: rgb(255, 255, 255, 0.5) solid 3px;
+    backdrop-filter: blur(30px);
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 80px;
+    align-items: center;
+    font-family: 'Jersey 25';
+    text-decoration: none;
+    justify-content: space-between;
+    padding: 10px;
+    z-index: 1000;
+}
+
+.menu{
+    display: flex;
+    background-color: #24224B;
+    border: rgb(255, 255, 255, 0.5) solid 2px;
+    border-radius: 10px;
+    width: 64px; height: 64px;
+    align-items: center;
+    justify-content: center;
+    margin-left: 1vh;
+    transition: 0.2s ease-in-out;
+}
+
+.menu:hover{
+    background-color: #33306d;
+    transform: rotate(5deg) scale(1.1);
+}
+
+.koshik{
+    font-family: 'Jersey 25';
+    text-decoration: none;
+    color: white;
+    border: rgb(255, 255, 255, 0.5) solid 2px;
+    display: flex;
+    background-color: #24224B;
+    border-radius: 10px;
+    width: 232px; height: 64px; font-size: 35px;
+    align-items: center;
+    margin-left: 2%;
+    justify-content: center;
+    transition: 0.2s ease-in-out;
+    gap: 2vh;
+}
+
+.koshik:hover{
+    width: 240px; height: 70px;
+    background-color: #33306d;
+}
+
+.info{
+    margin: 0 auto;
+    margin-top: 15vh;
+    width: 800px;
+    border: rgb(255, 255, 255, 0.5) solid 3px;
+    border-radius: 20px;
+    backdrop-filter: blur(30px); 
+    padding: 30px;
+}
+
+.zagolovok{
+    display: flex;
+    flex-direction: row;
+}
+
+.h0{
+    font-size: 50px;
+    width: 571px; 
+    color: #ffffff;
+    font-family: 'Jeju Gothic';
+}
+
+.h1 {
+    filter: invert(45%) sepia(100%) saturate(200%) hue-rotate(220deg);
+}
+
+
+.l1{
+    width: 206px;
+}
+
+.l2, .l3, .l4{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 36px;
+    align-items: center;
+    color: #FFFFFF;
+}
+
+.l0{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 16px;
+    color: #FFFFFF;
+}
+
+.tovars{
+    display: flex;
+    background-color: #24224B;
+    border-radius: 10px;
+    color: white;
+    width: 400px; height: 64px;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin: 0 auto;
+    margin-top: 10px;
+    transition: 0.3s ease-in-out;
+    border: rgb(255, 255, 255, 0.5) solid 3px;
+}
+
+.tovars:hover{
+    background-color: #33306d;
+    transform: scale(1.03);
+}
+
+.items{
+  display: flex;
+  padding-top: 10%;
+}
+
+.n1, .n2, .n3{
+    backdrop-filter: blur(30px);
+    border: rgb(255, 255, 255, 0.5) solid 3px;
+    border-radius: 50px;
+    width: 400px; height: 500px;
+}
+
+/* Стилі для бічної панелі */
+.side-panel {
+  position: fixed;
+  top: 0;
+  left: -250px; /* прихована по замовчуванню */
+  width: 250px;
+  height: 100%;
+  background-color: #24224B;
+  z-index: 1001;
+  transition: left 0.3s ease-in-out;
+  padding: 20px;
+}
+
+.side-panel.open {
+  left: 0; /* показати панель */
+}
+
+.side-panel-menu {
+  list-style: none;
+  padding: 0;
+  margin-top: 60px;
+}
+
+.side-panel-menu li {
+  margin: 20px 0;
+}
+
+.side-panel-menu a {
+  color: white;
+  font-family: 'Jersey 25';
+  font-size: 24px;
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+  transition: background-color 0.3s;
+}
+
+.side-panel-menu a:hover {
+  background-color: #33306d;
+  border-radius: 5px;
+}
+
+/* Кнопка для закриття панелі */
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 30px;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.close-btn:hover {
+  color: #ffba00;
+}
+
+.menu {
+  display: flex;
+  background-color: #24224B;
+  border: rgb(255, 255, 255, 0.5) solid 2px;
+  border-radius: 10px;
+  width: 64px;
+  height: 64px;
+  align-items: center;
+  justify-content: center;
+  margin-left: 1vh;
+  transition: 0.2s ease-in-out;
+  z-index: 1002; /* Зробити кнопку меню над панеллю */
+}
+
+.menu:hover {
+  background-color: #33306d;
+  transform: rotate(5deg) scale(1.1);
+}
+
+.goods{
+  position: relative;
+  /* backdrop-filter: blur(30px); */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding-top: 30px;
+}
+
+.good_text{
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 30px;
+}
+
+.g1{
+  width: 20%;
+  backdrop-filter: blur(50px);
+  border: 5px solid rgb(255, 255, 255, 0.5);
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+
+.good_img{
+  width: 100%;
+  
+}
+
+.good_buy{
+  background-color: rgb(39, 36, 81, 0.5);
+  border: 3px solid rgba(0, 0, 0, 0.5);
+  border-radius: 30px;
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  padding: 3vh;
+  transition: 0.3s;
+}
+  
+.good_buy:hover{
+  transform: scale(1.05);
+  background-color: rgba(56, 52, 118, 0.5);
+}
+
+.good_price{
+  background-color: rgb(254, 250, 32);
+  border: 3px solid #33306d;
+  border-radius: 30px;
+  padding: 1vh;
+  color: #33306d;
+  font-weight: 700;
+}
+
+.contacts{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(0, 0, 0, 0.7);
+  padding: 5vh;
+  margin-top: 5vh;
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.contacts2{
+  background-color: white;
+  flex-direction: row;
+  padding: 2vh;
+  border-radius: 30px;
+}
+
+.ds, .tg, .gh{
+  transition: 0.3s;
+}
+
+.ds:hover, .tg:hover, .gh:hover{
+  transform: scale(1.1);
+}
+
+.gsik{
+  backdrop-filter: blur(30px);
+  width: 90%;
+  margin-top: 15vh;
+  display: flex;
+  flex-direction: column;
+  border: 5px solid rgba(255, 255, 255, 0.5);
+  border-radius: 30px;
+  justify-self: center;
+  justify-content: center;
+}
+
+.gik{
+  background-color: #6A4EA6;
+  position: relative;
+  width: 150vh;
+  height: 200px;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  margin: 3vh;
+  border: 5px solid rgba(255, 255, 255, 0.5);
+  border-radius: 30px;
+  align-self: center;
+}
+
+.gik_text{
+  font-size: 36px;
+  line-height: 7vh;
+}
+
+.gik_h1{
+  font-size: 64px;
+}
+
+.gik_img{
+  height: 200px;
+}
+
+.gik_del{
+  position: absolute;
+  top: center; right: 5vh;
+  width: 50px; height: 50px;
+  border-radius: 10px;
+  font-size: 36px;
+  background-color: #926de0;
+  transition: 0.3s;
+}
+
+.gik_del:hover{
+  transform: scale(1.05) rotate(5deg);
+  background-color: #e06d6d;
+}
+
+.urGoods{
+  font-size: 64px;
+  padding: 3vh;
+  align-self: center;
+  display: flex;
+  justify-content: center;
+}
+
+.cart-items-list{
+  font-size: 64px;
+  margin: 0 auto;
+}
+
+.margin-y{
+  font-size: 42px;
+  margin: 0 auto;
+}
+
+.gik_plus, .gik_minus{
+  background-color: #926de0;
+  width: 32px; height: 32px;
+  border-radius: 5px;
+  justify-content: center;
+  align-content: center;
+  font-weight: 700;
+  font-size: 32px;
+  transition: 0.3s;
+}
+
+.gik_minus:hover{
+  transform: scale(1.05) rotate(5deg);
+  background-color: #e06d6d;
+}
+
+.gik_plus:hover{
+  transform: scale(1.05) rotate(5deg);
+  background-color: #7ee06d;
+}
+
+.gik-counter{
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
+}
+
+.count{
+  display: flex;
+  width: fit-content;
+}
