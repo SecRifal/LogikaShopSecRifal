@@ -19,6 +19,7 @@ function getCookieValue(cookieName) {
     return '';
 }
 
+
 // Отримуємо дані про товари з JSON файлу
 async function getProducts() {
     let response = await fetch("items.json");
@@ -97,9 +98,10 @@ class ShoppingCart {
 
     // Зміна кількості товарів товарів
     updateQuantity(itemTitle, newQuantity) {
+        console.log(itemTitle)
         if (this.items[itemTitle]) {
             this.items[itemTitle].quantity = newQuantity;
-            if (this.items[itemTitle].quantity == 0) {
+            if (this.items[itemTitle].quantity <= 0) {
                 delete this.items[itemTitle];
             }
             this.updateCounter();
@@ -154,3 +156,17 @@ function addToCart(event) {
     cart.addItem(product);
     console.log(cart);
 }
+// Отримуємо елементи
+const menuButton = document.querySelector('.menu');
+const sidePanel = document.querySelector('.side-panel');
+const closeButton = document.querySelector('.close-btn');
+
+// Відкриваємо бічну панель при натисканні на кнопку меню
+menuButton.addEventListener('click', function() {
+    sidePanel.classList.add('open');
+});
+
+// Закриваємо бічну панель при натисканні на кнопку закриття
+closeButton.addEventListener('click', function() {
+    sidePanel.classList.remove('open');
+});
